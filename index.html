@@ -5,24 +5,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 
 <body>
 
-    <h1>Weather App</h1>
+    <header id="heading">
+        <h1><img class="header-img" src="images/header.svg" alt="">Weather App</h1>
+        <!-- <ul class="navbar">
+            <li><a class="links active" href="/">city search</a></li>
+            <li><a class="links" href="/weekly.html">5 days</a></li>
+        </ul> -->
+    </header>
 
-    <input id="input-city" type="text" value="">
-    <button id="btn-city">Search</button>
-    <div id="output-city">
-        <div id="temp">Temperature celceius</div>
-        <div id="descrip">Description</div>
-        <div id="city">name</div>
-        <div id="country">Country</div>
-        <div id="clouds">Clouds %</div>
-        <div id="wind-speed">Wind Speed meter</div>
-        <div id="icon">Icon</div>
-        <div id="humidity">Humidity</div>
+    <div class="input">
+        <input placeholder="City Name" id="input-city" type="text" value="">
+        <button id="btn-city">Search</button>
+
     </div>
+
+
+    <section id="output-city">
+        <div class="left-div">
+            <div class="left-inner-upper">
+                <p id="city" class="txt-large">city</p>
+                <p id="country" class="txt-small">Country</p>
+            </div>
+            <div class="left-inner-bottom">
+                <div>
+                    <p id="time" class="txt-large">Time</p>
+                    <p id="date" class="txt-small">date</p>
+                </div>
+                <p id="temp">0°c</p>
+            </div>
+            <!-- <span>°c</span> -->
+
+        </div>
+        <div class="right-div">
+            <p id="icon"><img id="icon" src="images/temp.svg" alt=""></p>
+            <p id="descrip" class="txt-large">Description</p>
+            <hr style="width:90%; margin: auto;" />
+            <div class="right-inner-div">
+                <p>Clouds</p>
+                <p id="clouds">In %</p>
+                <p>Wind Speed</p>
+                <p id="wind-speed">In meters</p>
+                <p>Humidity</p>
+                <p id="humidity">In % </p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab nisi laboriosam harum fugit </p>
+
+        <p>© | 2020 | preCODES </p>
+    </footer>
 
 
     <script src="app.js"></script>
@@ -30,3 +71,23 @@
 </body>
 
 </html>
+
+<!-- <img src="images/sun.svg" alt="Clear Sky">
+<img src="images/cloudy.svg" alt="Few Clouds">
+<img src="images/clouds.svg" alt="Scattered Clouds">
+<img src="images/brokenclouds.svg" alt="Broken Clouds">
+<img src="images/rain.svg" alt="Shower Rain">
+<img src="images/rainy.svg" alt="Rain">
+<img src="images/storm.svg" alt="Thuderstrom">
+<img src="images/snowflake.svg" alt="Show">
+<img src="images/haze.svg" alt="Mist"> -->
+<!-- 
+// <img src="images/sun.svg" alt="Clear Sky">
+// <img src="images/cloudy.svg" alt="Few Clouds">
+// <img src="images/clouds.svg" alt="Scattered Clouds">
+// <img src="images/brokenclouds.svg" alt="Broken Clouds">
+// <img src="images/rain.svg" alt="Shower Rain">
+// <img src="images/rainy.svg" alt="Rain">
+// <img src="images/storm.svg" alt="Thuderstrom">
+// <img src="images/snowflake.svg" alt="Show">
+// <img src="images/haze.svg" alt="Mist"> -->
