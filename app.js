@@ -62,27 +62,27 @@ btnCitySearch.addEventListener('click', function searchCity() {
                 alert('Please Enter a City Name');
             } else {
                 console.log(error);
-                alert(error);
+                alert('Please Enter a Valid City Name');
             }
         });
     }
 
     if (condition < 300) {
-        icon.innerHTML = '<img src="images/storm.svg" alt="Thuderstrom">';
+        icon.innerHTML = '<img id="icon" src="images/storm.svg" alt="Thuderstrom">';
     } else if (condition < 505) {
-        icon.innerHTML = '<img src="images/rainy.svg" alt="Rain">';
+        icon.innerHTML = '<img id="icon" src="images/rainy.svg" alt="Rain">';
     } else if (condition === 515) {
-        icon.innerHTML = '<img src="images/snowflake.svg" alt="Show">';
+        icon.innerHTML = '<img id="icon" src="images/snowflake.svg" alt="Show">';
     } else if (condition < 600) {
-        icon.innerHTML = '<img src="images/rain.svg" alt="Shower Rain">';
+        icon.innerHTML = '<img id="icon" src="images/rain.svg" alt="Shower Rain">';
     } else if (condition < 700) {
-        icon.innerHTML = '<img src="images/snowflake.svg" alt="Show">';
+        icon.innerHTML = '<img id="icon" src="images/snowflake.svg" alt="Show">';
     } else if (condition < 800) {
-        icon.innerHTML = '<img src="images/haze.svg" alt="Mist">';
+        icon.innerHTML = '<img id="icon" src="images/haze.svg" alt="Mist">';
     } else if (condition === 800) {
-        icon.innerHTML = '<img src="images/sun.svg" alt="Clear Sky">';
+        icon.innerHTML = '<img id="icon" src="images/sun.svg" alt="Clear Sky">';
     } else {
-        icon.innerHTML = '<img src="images/clouds.svg" alt="Scattered Clouds">';
+        icon.innerHTML = '<img id="icon" src="images/clouds.svg" alt="Scattered Clouds">';
     }
 });
 
