@@ -33,11 +33,15 @@ a {
     font-weight: 500;
     text-align: center;
     background-color: #1F2937;
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem;
     margin-bottom: 2rem;
     box-shadow: 5px 10px 8px rgb(231, 220, 220);
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
+}
+
+#heading p {
+    text-align: start;
 }
 
 .header-img {
