@@ -11,10 +11,14 @@ let icon = document.querySelector('#icon');
 let humidity = document.querySelector('#humidity');
 let time = document.querySelector('#time');
 let date = document.querySelector('#date');
+let bgImage = document.querySelector('.left-div');
 
 
 let appId = '4736c416d23b5f1318fdf16618c9b5ff';
+let imageKey = '563492ad6f917000010000013399437d33f545b6ad303f4f00c8745c';
 let url = "http://api.openweathermap.org/data/2.5/weather?q=";
+let imageUrl = "https://api.pexels.com/v1/search?query=";
+// let imageUrl = "https://api.pexels.com/v1/search?query=delhi&color=blue&per_page=1";
 const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 let condition;
@@ -24,6 +28,10 @@ let finalCity;
 
 function constructUrl(city) {
     return url + city + "&units=metric&appid=" + appId;
+}
+
+function constructImageUrl(city) {
+    return imageUrl + city + "&color=blue&per_page=1";
 }
 
 btnCitySearch.addEventListener('click', function searchCity() {
@@ -77,7 +85,7 @@ btnCitySearch.addEventListener('click', function searchCity() {
         icon.innerHTML = '<img id="icon" src="images/rain.svg" alt="Shower Rain">';
     } else if (condition < 700) {
         icon.innerHTML = '<img id="icon" src="images/snowflake.svg" alt="Show">';
-    } else if (condition < 800) {
+    } else if (condition <= 800) {
         icon.innerHTML = '<img id="icon" src="images/haze.svg" alt="Mist">';
     } else if (condition === 800) {
         icon.innerHTML = '<img id="icon" src="images/sun.svg" alt="Clear Sky">';
@@ -89,12 +97,55 @@ btnCitySearch.addEventListener('click', function searchCity() {
 
 // *Weekly 
 
+// document.getElementById('a').style.backgroundImage = "url(images/img.jpg)";
 
+// let imageUrl = "https://api.pexels.com/v1/search?query=delhi&color=blue&per_page=1";
+// let btnImageSearch = document.querySelector('#btn-image');
 
+btnCitySearch.addEventListener('click', function seachImage() {
+    console.log('click');
+    fetch(constructImageUrl(cityInput.value), {
+            method: 'GET',
+            // withCredentials: true,
+            // credentials: 'include', 
+            headers: {
+                'Authorization': imageKey,
+            },
+            body: JSON.stringify(),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            console.log(data.photos[0].src.landscape);
+            bgImage.style.backgroundImage = `url(${data.photos[0].src.landscape})`;
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            bgImage.style.backgroundImage = "url('images/left-bg.jpg')";
+        });
 
+});
 
+// photos[0].src.landscape
 
+// fetch(imageUrl, {
+//     method: 'GET',
+//     // withCredentials: true,
+//     // credentials: 'include', 
+//     headers: {
+//         'Authorization': '563492ad6f917000010000013399437d33f545b6ad303f4f00c8745c',
+//     },
+//     body: JSON.stringify(),
+// })
+//     .then(response => response.json())
+//     .then(data => {
+//         console.log('Success:', data);
+//         console.log(data.photos[0].src.landscape);
+//     })
+//     .catch((error) => {
+//         console.error('Error:', error);
 
+//     });
 
 
 
@@ -112,3 +163,5 @@ btnCitySearch.addEventListener('click', function searchCity() {
 // console.log(today);
 // VM1107: 1 Tue Dec 01 2020 02: 28: 42 GMT + 0530(India Standard Time)
 // let urlWhole = "http://api.openweathermap.org/data/2.5/weather?q=Mumbai&units=metric&appid=4736c416d23b5f1318fdf16618c9b5ff";
+
+// http://api.openweathermap.org/data/2.5/forecast?q=Mumbai&cnt=40&units=metric&appid=4736c416d23b5f1318fdf16618c9b5ff
