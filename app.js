@@ -75,6 +75,7 @@ btnCitySearch.addEventListener('click', function searchCity() {
         });
     }
 
+    // http://openweathermap.org/img/wn/10d@2x.png
     if (condition < 300) {
         icon.innerHTML = '<img id="icon" src="images/storm.svg" alt="Thuderstrom">';
     } else if (condition < 505) {
@@ -123,7 +124,6 @@ btnCitySearch.addEventListener('click', function seachImage() {
             console.error('Error:', error);
             bgImage.style.backgroundImage = "url('images/left-bg.jpg')";
         });
-
 });
 
 // photos[0].src.landscape
@@ -147,15 +147,23 @@ btnCitySearch.addEventListener('click', function seachImage() {
 
 //     });
 
+// http://api.openweathermap.org/data/2.5/weather?q=Mumbai&units=metric&appid=4736c416d23b5f1318fdf16618c9b5ff
 
 
-
-
-
-
-
-
-
+// fetch(imageUrl, {
+//     method: 'POST',
+//     headers: {
+//         'Authorization': '563492ad6f917000010000013399437d33f545b6ad303f4f00c8745c',
+//     },
+//     body: JSON.stringify(),
+// })
+//     .then(response => response.json())
+//     .then(data => {
+//         console.log('Success:', data);
+//     })
+//     .catch((error) => {
+//         console.error('Error:', error);
+//     });
 
 // let icon = document.querySelector('#icon');
 

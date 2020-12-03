@@ -27,6 +27,9 @@ a {
     font-weight: bold;
 }
 
+
+/* Heading  */
+
 #heading {
     color: #ffffff;
     margin: auto;
@@ -54,6 +57,9 @@ a {
     display: inline;
     margin: 0 1rem;
 }
+
+
+/* Input */
 
 .input {
     /* display: flex; */
@@ -93,6 +99,9 @@ a {
     font-size: 1rem;
     outline: 0;
 }
+
+
+/* Output  */
 
 #output-city {
     /* padding: 1rem; */
@@ -172,6 +181,9 @@ a {
     font-size: 1.7rem;
     padding-left: 2rem;
 }
+
+
+/* Footer  */
 
 footer {
     margin-top: 7rem;
